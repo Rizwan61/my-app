@@ -31,12 +31,12 @@ const Slidebar = ({mode,setMode}) => {
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText primary="HomePage" />
+            <ListItemText primary="Homepage" />
           </ListItemButton>
         </ListItem>
 
       </List>
-      <List>
+      {/* <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
             <ListItemIcon>
@@ -91,7 +91,8 @@ const Slidebar = ({mode,setMode}) => {
           </ListItemButton>
         </ListItem>
 
-      </List><List>
+      </List>
+      <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
             <ListItemIcon>
@@ -108,7 +109,7 @@ const Slidebar = ({mode,setMode}) => {
         <Switch onChange={e=>(setMode(mode=== "light" ? "dark": "light"))} />
       </ListItemButton>
 
-      </List>
+      </List> */}
       </Box>
     </Box>
   )
