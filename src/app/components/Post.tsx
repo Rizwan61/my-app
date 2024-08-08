@@ -19,23 +19,30 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+const getallproduct = async ()=>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const products =  res.json();
+  return products
+}
 
-export default function Post() {
+export default async function Post() {
 
-  const getallproduct = async ()=>{
-    const res = await fetch('https://fakestoreapi.com/products');
-    const products = await res.json();
+    const data = await getallproduct();
+
+  
     
   
-  console.log(products)
+  console.log(data)
   
-  return
-}
+
+
 
   return (
    <>
    <Box flex={4} p={2}>
-   <Card>
+  {
+    data.map((item)=>(
+      <Card>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red }} aria-label="recipe">
@@ -47,7 +54,7 @@ export default function Post() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
+        title={item.title}
         subheader="September 14, 2016"
       />
       <CardMedia
@@ -58,9 +65,7 @@ export default function Post() {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {item.body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -73,6 +78,8 @@ export default function Post() {
         </CardActions>
       
     </Card>
+    ))
+  }
    </Box>
    
    </>
