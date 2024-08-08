@@ -68,7 +68,7 @@ export default async function Post() {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <Link href={`/comments/${item.id}`}>Comment</Link>
+        <Link href={`./comments/${item.id}`}>Comment</Link>
 
         </CardActions>
       
