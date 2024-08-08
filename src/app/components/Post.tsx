@@ -28,15 +28,6 @@ const getallproduct = async ()=>{
 export default async function Post() {
 
     const data = await getallproduct();
-
-  
-    
-  
-  console.log(data)
-  
-
-
-
   return (
    <>
    <Box flex={4} p={2}>

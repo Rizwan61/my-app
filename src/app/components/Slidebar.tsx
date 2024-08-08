@@ -36,7 +36,7 @@ const Slidebar = ({mode,setMode}) => {
         </ListItem>
 
       </List>
-      {/* <List>
+      <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
             <ListItemIcon>
@@ -109,7 +109,7 @@ const Slidebar = ({mode,setMode}) => {
         <Switch onChange={e=>(setMode(mode=== "light" ? "dark": "light"))} />
       </ListItemButton>
 
-      </List> */}
+      </List> 
       </Box>
     </Box>
   )
