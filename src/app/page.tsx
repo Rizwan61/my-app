@@ -21,7 +21,7 @@ export default function Home() {
     <>
     <ThemeProvider theme={darktheme} >
     <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar />
+       
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Slidebar setMode={setMode} mode={mode} />
           <Main />

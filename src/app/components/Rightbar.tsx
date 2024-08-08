@@ -10,6 +10,9 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import * as React from 'react';
+import profile from '../../../public/1.jpg'
+
+
 import Image from 'next/image';
 const getallproduct = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -20,6 +23,8 @@ const getallproduct = async () => {
 
 export default async function Rightbar() {
   const data = await getallproduct();
+
+  
   return (
     <>
       <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
@@ -67,9 +72,9 @@ export default async function Rightbar() {
                 </Typography>
                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                   <ListItem alignItems="flex-start">
-                    <ListItemAvatar>
-                      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                    </ListItemAvatar>
+
+                    <Image src={profile} width={80} height={80} />
+
                     <ListItemText
                       primary={item.title}
                       secondary={

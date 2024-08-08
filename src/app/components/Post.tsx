@@ -1,3 +1,4 @@
+'use client'
 import Box from '@mui/material/Box';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -18,6 +19,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link } from '@mui/material';
 
 const getallproduct = async ()=>{
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -26,8 +28,8 @@ const getallproduct = async ()=>{
 }
 
 export default async function Post() {
-
-    const data = await getallproduct();
+      const data = await getallproduct();
+     
   return (
    <>
    <Box flex={4} p={2}>
@@ -66,6 +68,8 @@ export default async function Post() {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
+        <Link href={`/comments/${item.id}`}>Comment</Link>
+
         </CardActions>
       
     </Card>
